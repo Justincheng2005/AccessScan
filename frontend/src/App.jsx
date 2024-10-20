@@ -1,16 +1,44 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import axios from 'axios'
+
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [inputValue, setInputValue] = useState("");
+  const [resultsLoaded, setResultsLoaded] = useState(false);
 
+  const handleInputChange = (e) => { 
+    setInputValue(e.target.value);
+  }
+  const handleClick = () => {
+    console.log(inputValue);
+  }
+
+
+
+
+  
+  
   return (
-    <>
-      <h1>Website Accessibility Scanner</h1>
-        
-    </>
+    <div>
+      <h1 className="title">Website Accessibility Scanner</h1>
+      <div className='input-container'>
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          placeholder="Enter a URL"
+          className = "link-input"
+        />
+        <button className="link-submit" onClick={handleClick}>Check</button>
+      </div>
+      
+      {resultsLoaded ? 
+        <div></div>
+      :
+        <></>}
+    </div>
   )
 }
 
