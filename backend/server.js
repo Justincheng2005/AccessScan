@@ -1,6 +1,7 @@
 const express = require('express');
 const pa11y = require('pa11y');
 const puppeteer = require('puppeteer');
+const cors = require('cors');
 const { AxePuppeteer } = require('axe-puppeteer');
 
 const app = express();
@@ -26,9 +27,9 @@ async function runAxeCoreTest(url) {
 }
 
 app.post('/api/test', async (req, res) => {
-    const url = req.body;
+    const url = req.body.url;
 
-    if(url){
+    if(!url){
         return res.status(400).json({error: 'URL is required'});
     }
 

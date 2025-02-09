@@ -15,12 +15,12 @@
 .link-submit{
   font-size:medium;
   padding:0.8rem;
-  background-color: #646cff;
+  background-color: #5c64f7;
   color:white;
   border-radius: 5px;
 }
 .link-submit:hover{
-  background-color: #646cff;
+  background-color: #5c64f7;
   color: white;
 }
 
